@@ -21,4 +21,4 @@ match firstNumberForCalc:
     case 0:
         print("you can't")
     case "&":
-        print("Result " + str(firstNumberForCalc / (1 / secondNumberForCalc)))
+        print("Result " + str(firstNumberForCalc ** (1 / secondNumberForCalc)))
