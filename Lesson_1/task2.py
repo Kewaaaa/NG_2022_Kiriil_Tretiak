@@ -20,3 +20,4 @@ elif symbolForCalc == "&":
     if firstNumberForCalc < 0:
         result = ("you can't!")
 print("Result: " + str(result))
+
