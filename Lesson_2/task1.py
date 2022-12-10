@@ -4,7 +4,7 @@ uniq = set(value)
 for element in value:
     print(element, end="")
 print("\n")
-l = list(uniq)
-l.sort()
-for element in l:
+lst = list(uniq)
+lst.sort()
+for element in lst:
     print(element + " - " + str(value.count(element)))

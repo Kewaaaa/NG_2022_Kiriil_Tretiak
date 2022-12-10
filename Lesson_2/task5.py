@@ -1,4 +1,5 @@
-s = input("Enter a variable: ").split(", ")
-print("Min: " + min(s))
-print("Max: " + max(s))
-
+num = int(input("Enter: "))
+buffer = 0
+for sum in num:
+    buffer = sum + buffer
+print(buffer)
