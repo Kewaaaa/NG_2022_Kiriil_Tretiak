@@ -1,5 +1,6 @@
-num = int(input("Enter: "))
-buffer = 0
-for sum in num:
-    buffer = sum + buffer
-print(buffer)
+thislist = input("Enter some numbers: ").split(",")
+newlist = list(map(int, thislist))
+print("Max: " + str(max(newlist)))
+print("Min: " + str(min(newlist)))
+summa = sum(newlist)
+print("Sum: " + str(summa))
