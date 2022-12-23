@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/" method="post">
+        First number
+        <input type="text" name="firstNumber" style="margin-left: 59px; margin-bottom: 10px;"><br>
+        Second number
+        <input type="text" name="secondNumber" style="margin-left: 42px; margin-bottom: 10px;"><br>
+        Choose an operation
+        <input type="text" name="operation" style="margin-left: 10px;"><br>
+        <button style="
+        color: white;
+        background-color: rgb(94, 157, 235);
+        padding: 10px 15px;
+        border-radius: 2px;
+        border: none;
+        cursor: pointer;
+        margin-left: 230px;
+        margin-top: 15px;
+        ">Calculate</button>
+        <p style="
+        margin-top: -24px;
+        "><b>You can use (+, -, *, /)</b></p>
+    </form>
+    {%if result%}
+    <p>your result: {{result}} </p>
+    {%endif%}
+</body>
+
+</html>
