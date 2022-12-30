@@ -1,9 +1,7 @@
-firstNumber = int(input("Enter the first number: "))
-secondNumber = int(input("Enter the second number: "))
-action = input("Enter an actions(+, -, *, /, ^): ")
-
-
-def actions(action):
+def actions():
+    firstNumber = int(input("Enter the first number: "))
+    secondNumber = int(input("Enter the second number: "))
+    action = input("Enter an actions(+, -, *, /, ^): ")
     if action == "+":
         return firstNumber + secondNumber
     elif action == "-":
@@ -19,4 +17,4 @@ def actions(action):
         return firstNumber ** secondNumber
 
 
-print(actions(action))
+print(actions())
