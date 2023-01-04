@@ -1,20 +1,31 @@
-def actions():
-    firstNumber = int(input("Enter the first number: "))
-    secondNumber = int(input("Enter the second number: "))
-    action = input("Enter an actions(+, -, *, /, ^): ")
-    if action == "+":
-        return firstNumber + secondNumber
-    elif action == "-":
-        return firstNumber - secondNumber
-    elif action == "*":
-        return firstNumber * secondNumber
-    elif action == "/":
-        try:
-            return firstNumber / secondNumber
-        except ZeroDivisionError:
-            return "Infinity"
-    elif action == "^":
-        return firstNumber ** secondNumber
+def plus(num1, num2, result):
+    result = num1 + num2
+    return result
 
 
-print(actions())
+def minus(num1, num2, result):
+    result = num1 - num2
+    return result
+
+
+def multiply(num1, num2, result):
+    result = num1 * num2
+    return result
+
+
+def devide(num1, num2, result):
+    result = num1 / num2
+    return result
+
+
+num1 = int(input("Enter 1 number: "))
+num2 = int(input("Enter 2 number: "))
+symbol = input("Choose an action: ")
+if symbol == "+":
+    print(plus(num1, num2, symbol))
+elif symbol == "-":
+    print(minus(num1, num2, symbol))
+elif symbol == "*":
+    print(multiply(num1, num2, symbol))
+elif symbol == "/":
+    print(devide(num1, num2, symbol))
