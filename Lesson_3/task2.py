@@ -1,81 +1,89 @@
-vowels = ['a', 'e', 'o', 'u', 'i', 'y']
+def sorting(stringList):
+    stringList.sort()
+    return stringList
 
 
-def actionsOfMenu():
-    global strng
-    strng = input("Enter some words: ")
-    global choiseOfNumber
-    print("What do u want:\n1.Sorting\n2.Count elements\n3.Show vowels or consonants\n4.Change words from end to start\n5.Choose a word in place u want\n6.Print string again\n")
-    choiseOfNumber = input("Choose an action: ")
-    global strngList
-    strngList = strng.split(", ")
+def countElements(stringList):
+    return len(stringList)
 
 
-def printList():
-    print("Your string: " + strng)
-
-
-def sortingString():
-    strngList.sort()
-    return strngList
-
-
-def countElement():
-    print(len(strngList))
-
-
-def vowelsLetters():
+def vowelsLetters(string):
     result = []
-    for letters in strng:
+    vowels = ['a', 'e', 'o', 'u', 'i', 'y']
+    for letters in string:
         if letters in vowels:
             result.append(letters)
     return result
 
 
-def consonantsLetters():
+def consonantsLetters(string):
     result = []
-    for letters in strng:
+    vowels = ['a', 'e', 'o', 'u', 'i', 'y']
+    for letters in string:
         if letters not in vowels:
             result.append(letters)
     return result
 
 
-def reversWord():
-    result = []
-    for i in range(len(strngList)):
-        for j in range(len(strngList)):
-            strngList[i] = strngList[j + 1]
-        result.append(strngList)
-    printList()
-    return result
+def reversString(stringList):
+    lst = []
+    for i in range(len(stringList), 0, -1):
+        for j in range(len(stringList)):
+            result = stringList[i-1]
+        lst.append(result)
+    return lst
 
 
-def wordPlace(word):
-    return strngList[word - 1]
+def askString(string):
+    return input(string)
 
 
-def choice():
-    if choiseOfNumber == "1":
-        print(sortingString())
-        printList()
-    if choiseOfNumber == "2":
-        countElement()
-        printList()
-    if choiseOfNumber == "3":
-        choise = input("Choose a vowels(v) or consonants(c): ")
-        if choise == "v":
-            print(vowelsLetters())
-        if choise == "c":
-            print(consonantsLetters())
-        printList()
-    if choiseOfNumber == "4":
-        print(reversWord())
-    if choiseOfNumber == "5":
-        position = int(input("Choose the word place: "))
-        print(wordPlace(position))
-        printList()
-    if choiseOfNumber == "6":
-        actionsOfMenu()
+def askAction(choise):
+    return input(choise)
 
 
-choice()
+def printString(stringList):
+    return stringList
+
+
+def wordPosition(position, stringList):
+    return stringList[position-1]
+
+
+def main():
+    string = askString("Enter some words: ")
+    stringList = string.split(", ")
+    print("What do u want: \n1.Sorting\n2.Count elements\n3.Show vowels or consonants\n4.Change words from end to start\n5.Choose a word in place u want\n6.Print string again\n7.Exit\n")
+    choise = askAction("Choose an action: ")
+    if choise == "1":
+        print(printString(stringList))
+        print(sorting(stringList))
+    elif choise == "2":
+        print(printString(stringList))
+        print(str(countElements(stringList)) + " elements")
+    elif choise == "3":
+        choose = input("Choose a vowels(v) or consonants(c): ")
+        if choose == "v":
+            print(printString(stringList))
+            print(vowelsLetters(string))
+        else:
+            print(printString(stringList))
+            print(consonantsLetters(string))
+    elif choise == "4":
+        print("Before: " + str(printString(stringList)))
+        print("After: " + str(reversString(stringList)))
+    elif choise == "5":
+        print(printString(stringList))
+        position = int(input("Choose a position of word: "))
+        print(wordPosition(position, stringList))
+    elif choise == "6":
+        while choise == "6":
+            main()
+            if choise != "6":
+                break
+    elif choise == "7":
+        while True:
+            break
+
+
+main()
